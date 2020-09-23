@@ -1,0 +1,3 @@
+api_login_check:
+    path: /api/login_check
+    #à tester si on peut le retirer plus tard
