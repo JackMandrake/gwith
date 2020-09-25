@@ -41,7 +41,7 @@ class Action
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
-     * 
+     *
      */
     private $updatedAt;
 
@@ -180,7 +180,4 @@ class Action
     {
         return $this->name;
     }
-   
-   
-
 }

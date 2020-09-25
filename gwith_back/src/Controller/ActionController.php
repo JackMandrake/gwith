@@ -23,7 +23,6 @@ class ActionController extends AbstractController
         if ($request->query->has('action_type')) {
             $actionTypes = $request->query->get('action_type');
             $actions = $repository->findAllByType($actionTypes);
-
         } else {
             $actions = $repository->findAllOrderByName();
         }

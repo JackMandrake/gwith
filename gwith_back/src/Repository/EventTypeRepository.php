@@ -23,11 +23,10 @@ class EventTypeRepository extends ServiceEntityRepository
     {
         $queryBuilder = $this->createQueryBuilder('eventType');
 
-         $queryBuilder->addOrderBy('eventType.name');
+        $queryBuilder->addOrderBy('eventType.name');
 
-         $query = $queryBuilder->getQuery();
+        $query = $queryBuilder->getQuery();
 
         return $query->getResult();
     }
-
 }

@@ -28,11 +28,11 @@ class PlaceRepository extends ServiceEntityRepository
         // de base ma requete ressemble à : SELECT * FROM place
         $queryBuilder = $this->createQueryBuilder('place');
 
-         // je personnalise ma requete (ordonné par titre)
-         $queryBuilder->addOrderBy('place.name');
+        // je personnalise ma requete (ordonné par titre)
+        $queryBuilder->addOrderBy('place.name');
 
-         // j'éxécute ma requête
-         $query = $queryBuilder->getQuery();
+        // j'éxécute ma requête
+        $query = $queryBuilder->getQuery();
 
         // je m'attends à plusieurs resultats, donc : getResult() et non getOneOrNullResult()
         return $query->getResult();
@@ -47,9 +47,8 @@ class PlaceRepository extends ServiceEntityRepository
         $queryBuilder->where(
             $queryBuilder->expr()->eq('placeType.id', $typeId)
         );
-         $queryBuilder->addOrderBy('place.name');
-         $query = $queryBuilder->getQuery();
+        $queryBuilder->addOrderBy('place.name');
+        $query = $queryBuilder->getQuery();
         return $query->getResult();
     }
-
 }

@@ -28,9 +28,9 @@ class ActionRepository extends ServiceEntityRepository
     {
         $queryBuilder = $this->createQueryBuilder('action');
 
-         $queryBuilder->addOrderBy('action.name');
+        $queryBuilder->addOrderBy('action.name');
 
-         $query = $queryBuilder->getQuery();
+        $query = $queryBuilder->getQuery();
 
         return $query->getResult();
     }
@@ -50,12 +50,10 @@ class ActionRepository extends ServiceEntityRepository
             $queryBuilder->expr()->eq('actionType.id', $typeId)
         );
 
-         $queryBuilder->addOrderBy('action.name');
+        $queryBuilder->addOrderBy('action.name');
 
-         $query = $queryBuilder->getQuery();
+        $query = $queryBuilder->getQuery();
 
         return $query->getResult();
     }
-
-
 }

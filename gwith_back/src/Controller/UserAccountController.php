@@ -19,13 +19,13 @@ class UserAccountController extends AbstractController
     /**
      * @Route("/register", name="register")
      */
-    public function createAccount(request $request, UserPasswordEncoderInterface $passwordEncoder )
+    public function createAccount(request $request, UserPasswordEncoderInterface $passwordEncoder)
     {
         $user = new AppUser();
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
         
-        if($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid()) {
             $plainPassword = $form->get('password')->getData();
             $encodedPassword = $passwordEncoder->encodePassword($user, $plainPassword);
             $user->setPassword($encodedPassword);
@@ -49,12 +49,11 @@ class UserAccountController extends AbstractController
             ],
             Response::HTTP_BAD_REQUEST
         );
-    
     }
 
-     /**
-     * @Route("/account/delete", name="account_delete")
-     */
+    /**
+    * @Route("/account/delete", name="account_delete")
+    */
     public function delete()
     {
         /** @var AppUser $user */
@@ -82,10 +81,9 @@ class UserAccountController extends AbstractController
         $form = $this->createForm(UserPasswordUpdateType::class, $user);
         $form->handleRequest($request);
         
-        if($form->isSubmitted() && $form->isValid()) {
-
+        if ($form->isSubmitted() && $form->isValid()) {
             $plainPassword = $form->get('newPassword')->getData();
-            $encodedPassword = $passwordEncoder->encodePassword($user, $plainPassword); 
+            $encodedPassword = $passwordEncoder->encodePassword($user, $plainPassword);
             $user->setPassword($encodedPassword);
 
             $this->getDoctrine()->getManager()->flush();
@@ -112,14 +110,13 @@ class UserAccountController extends AbstractController
      */
     public function userNameUpdate(Request $request)
     {
-        // $user->getToken(); je me demande si je ne dois pas plutot recupe le token... 
+        // $user->getToken(); je me demande si je ne dois pas plutot recupe le token...
         /** @var AppUser $user */
         $user = $this->getUser();
         $form = $this->createForm(UserNameUpdateType::class, $user);
         $form->handleRequest($request);
 
-        if($form->isSubmitted() && $form->isValid()) {
-
+        if ($form->isSubmitted() && $form->isValid()) {
             $newName = $form->get('newName')->getData();
             $user->setName($newName);
 

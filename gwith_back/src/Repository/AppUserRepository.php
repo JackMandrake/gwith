@@ -23,9 +23,9 @@ class AppUserRepository extends ServiceEntityRepository
     {
         $queryBuilder = $this->createQueryBuilder('appUser');
 
-         $queryBuilder->addOrderBy('appUser.name');
+        $queryBuilder->addOrderBy('appUser.name');
 
-         $query = $queryBuilder->getQuery();
+        $query = $queryBuilder->getQuery();
 
         return $query->getResult();
     }

@@ -58,7 +58,7 @@ class AppUser implements UserInterface
     private $updatedAt;
 
     /**
-   
+
      * @ORM\Column(type="integer", options={"default": 0})
      * @Groups({"app_users:list", "app_user:view"})
      */
@@ -256,5 +256,4 @@ class AppUser implements UserInterface
     {
         return $this->name;
     }
-
 }

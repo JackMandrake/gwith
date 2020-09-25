@@ -28,8 +28,8 @@ class UserPasswordUpdateType extends AbstractType
                 ]
             )
             ->add(
-                'newPassword', 
-                RepeatedType::class, 
+                'newPassword',
+                RepeatedType::class,
                 [
                     "mapped" => false,
                     'type' => PasswordType::class,

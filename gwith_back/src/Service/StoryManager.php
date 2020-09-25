@@ -19,10 +19,11 @@ class StoryManager
 
     public function __construct(EntityManagerInterface $manager)
     {
-       $this->manager = $manager;
+        $this->manager = $manager;
     }
 
-    public function createScenes(Story $story, array $scenesData) {
+    public function createScenes(Story $story, array $scenesData)
+    {
         //===========SCENES===============
         // array to keep track of the scenes we are about to create
         $scenes = [];

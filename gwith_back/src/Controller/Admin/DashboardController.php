@@ -23,13 +23,11 @@ use App\Entity\Story;
 use App\Entity\StoryCategory;
 use App\Entity\Transition;
 
-
-
 class DashboardController extends AbstractDashboardController
 {
     /**
      * @Route("/admin", name="admin")
-     * 
+     *
      */
     public function index(): Response
     {
