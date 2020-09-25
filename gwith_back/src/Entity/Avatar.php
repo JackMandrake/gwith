@@ -27,7 +27,7 @@ class Avatar
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
-     *      
+     *
      */
     private $updatedAt;
 

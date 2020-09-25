@@ -26,8 +26,8 @@ class EventRepository extends ServiceEntityRepository
     public function findAllOrderByName()
     {
         $queryBuilder = $this->createQueryBuilder('event');
-         $queryBuilder->addOrderBy('event.name');
-         $query = $queryBuilder->getQuery();
+        $queryBuilder->addOrderBy('event.name');
+        $query = $queryBuilder->getQuery();
         return $query->getResult();
     }
 
@@ -38,10 +38,8 @@ class EventRepository extends ServiceEntityRepository
         $queryBuilder->where(
             $queryBuilder->expr()->eq('eventType.id', $typeId)
         );
-         $queryBuilder->addOrderBy('event.name');
-         $query = $queryBuilder->getQuery();
+        $queryBuilder->addOrderBy('event.name');
+        $query = $queryBuilder->getQuery();
         return $query->getResult();
     }
-
-
 }

@@ -27,11 +27,10 @@ class StoryCategoryRepository extends ServiceEntityRepository
     {
         $queryBuilder = $this->createQueryBuilder('storyCategory');
 
-         $queryBuilder->addOrderBy('storyCategory.name');
+        $queryBuilder->addOrderBy('storyCategory.name');
 
-         $query = $queryBuilder->getQuery();
+        $query = $queryBuilder->getQuery();
 
         return $query->getResult();
     }
-
 }

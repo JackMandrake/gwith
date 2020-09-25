@@ -30,8 +30,8 @@ class StoryController extends AbstractController
 
     public function __construct(Security $security, StoryManager $storyManager)
     {
-       $this->security = $security;
-       $this->storyManager = $storyManager;
+        $this->security = $security;
+        $this->storyManager = $storyManager;
     }
 
     /**
@@ -99,7 +99,7 @@ class StoryController extends AbstractController
      */
     public function create(Request $request)
     {
-        // we are treating the data from the request with symfony's "processing form" 
+        // we are treating the data from the request with symfony's "processing form"
         // https://symfony.com/doc/current/forms.html#processing-forms
 
         // get the data submitted by the front
@@ -158,6 +158,3 @@ class StoryController extends AbstractController
         );
     }
 }
-
-
-

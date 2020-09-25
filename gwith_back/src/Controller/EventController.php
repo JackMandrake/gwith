@@ -8,6 +8,7 @@ use App\Entity\Event;
 use App\Repository\EventRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+
 /**
  * @Route("/api/events")
  * @IsGranted("ROLE_USER")
@@ -19,19 +20,19 @@ class EventController extends AbstractController
      */
     public function list(EventRepository $repository, Request $request)
     {
-       if ($request->query->has('event_type')) {
-        $eventType = $request->query->get('event_type');
-        $events = $repository->findAllByType($eventType);
-    } else {
-        $events = $repository->findAllOrderByName();
-    }
+        if ($request->query->has('event_type')) {
+            $eventType = $request->query->get('event_type');
+            $events = $repository->findAllByType($eventType);
+        } else {
+            $events = $repository->findAllOrderByName();
+        }
 
-    return $this->json(
-        $events,
-        200,
-        [],
-        ["groups" => ["events:list"]]
-    );
+        return $this->json(
+            $events,
+            200,
+            [],
+            ["groups" => ["events:list"]]
+        );
     }
 
     /**
@@ -46,5 +47,4 @@ class EventController extends AbstractController
             ["groups" => ["event:view"]]
         );
     }
-
 }

@@ -23,7 +23,7 @@ class AppUserController extends AbstractController
 
     public function __construct(Security $security)
     {
-       $this->security = $security;
+        $this->security = $security;
     }
 
     /**

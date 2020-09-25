@@ -28,11 +28,11 @@ class StoryRepository extends ServiceEntityRepository
         // de base ma requete ressemble à : SELECT * FROM story
         $queryBuilder = $this->createQueryBuilder('story');
 
-         // je personnalise ma requete (ordonné par titre)
-         $queryBuilder->addOrderBy('story.title');
+        // je personnalise ma requete (ordonné par titre)
+        $queryBuilder->addOrderBy('story.title');
 
-         // j'éxécute ma requête
-         $query = $queryBuilder->getQuery();
+        // j'éxécute ma requête
+        $query = $queryBuilder->getQuery();
 
         // je m'attends à plusieurs resultats, donc : getResult() et non getOneOrNullResult()
         return $query->getResult();
@@ -64,12 +64,12 @@ class StoryRepository extends ServiceEntityRepository
         // de base ma requete ressemble à : SELECT * FROM story
         $queryBuilder = $this->createQueryBuilder('story');
 
-         // je personnalise ma requete (ici max 10 résultats et ordonné par rating)
-         $queryBuilder->setMaxResults(10);
-         $queryBuilder->addOrderBy('story.rating');
+        // je personnalise ma requete (ici max 10 résultats et ordonné par rating)
+        $queryBuilder->setMaxResults(10);
+        $queryBuilder->addOrderBy('story.rating');
 
-         // j'éxécute ma requête
-         $query = $queryBuilder->getQuery();
+        // j'éxécute ma requête
+        $query = $queryBuilder->getQuery();
 
         // je m'attends à plusieurs resultats, donc : getResult() et non getOneOrNullResult()
         return $query->getResult();
@@ -81,12 +81,12 @@ class StoryRepository extends ServiceEntityRepository
         // de base ma requete ressemble à : SELECT * FROM story
         $queryBuilder = $this->createQueryBuilder('story');
 
-         // je personnalise ma requete (ici max 10 résultats et ordonné par date de publication)
-         $queryBuilder->setMaxResults(10);
-         $queryBuilder->addOrderBy('story.publishedAt');
+        // je personnalise ma requete (ici max 10 résultats et ordonné par date de publication)
+        $queryBuilder->setMaxResults(10);
+        $queryBuilder->addOrderBy('story.publishedAt');
 
-         // j'éxécute ma requête
-         $query = $queryBuilder->getQuery();
+        // j'éxécute ma requête
+        $query = $queryBuilder->getQuery();
 
         // je m'attends à plusieurs resultats, donc : getResult() et non getOneOrNullResult()
         return $query->getResult();

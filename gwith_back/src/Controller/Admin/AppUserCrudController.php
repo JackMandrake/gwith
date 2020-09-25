@@ -8,7 +8,6 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 
-
 class AppUserCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string

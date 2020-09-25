@@ -7,7 +7,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
-
 /**
  * @Route("/api/event_types")
  * @IsGranted("ROLE_USER")
@@ -27,6 +26,4 @@ class EventTypeController extends AbstractController
             ["groups" => ["event_types:list"]]
         );
     }
-
 }
-

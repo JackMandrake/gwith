@@ -23,9 +23,9 @@ class ActionTypeRepository extends ServiceEntityRepository
     {
         $queryBuilder = $this->createQueryBuilder('actionType');
 
-         $queryBuilder->addOrderBy('actionType.name');
+        $queryBuilder->addOrderBy('actionType.name');
 
-         $query = $queryBuilder->getQuery();
+        $query = $queryBuilder->getQuery();
 
         return $query->getResult();
     }

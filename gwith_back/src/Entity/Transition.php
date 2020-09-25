@@ -125,6 +125,6 @@ class Transition
     {
         $action = $this->getAction();
         $actionName = $action->getName();
-         return $this->$actionName;
+        return $this->$actionName;
     }
 }
